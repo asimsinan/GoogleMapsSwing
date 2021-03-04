@@ -6,6 +6,7 @@ This is a Netbeans project. The project uses JavaFX libraries to display Google 
 1. Import the project from Netbeans.
 2. Put your API Key in maps.html where it says "YOUR_API_KEY".
 3. Run the GUI app.
+4. Enter Center X, Center Y which are the beginning/center coordinates for generating random markers. Radius defines the boundries of generated markers.
 
 # Supported Operations: #
 1. Generate random unique coordinates.
