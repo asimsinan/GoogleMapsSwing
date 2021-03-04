@@ -75,6 +75,11 @@ public class GoogleMapsViewer extends JFXPanel {
         }
 
     }
+    public void clusterMarkers(boolean enabled){
+     Platform.runLater(() -> {
+            engine.executeScript("clusterMarkers("+enabled+")");
+        });
+    }
     public void centerMap(String lat,String lng, String zoomLevel){
          Platform.runLater(() -> {
             engine.executeScript("setCenter(" + lat + "," + lng + "," +zoomLevel+ ")");

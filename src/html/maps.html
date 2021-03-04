@@ -7,11 +7,13 @@
             body { height: 100%; margin: 0; padding: 0 }
             #map-canvas { height: 100% }
         </style>
+         <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
         <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
         <script type="text/javascript">
             var map;
             let markers = [];
+            let markerCluster;
             const myLatLng = {lat: 37.815774584158255, lng: 30.532389036539932};
             function initMap() {
                 map = new google.maps.Map(document.getElementById("map-canvas"), {
@@ -48,6 +50,15 @@
             function deleteMarkers() {
                 clearMarkers();
                 markers = [];
+            }
+            function clusterMarkers(enabled) {
+            if(enabled){
+            markerCluster=new MarkerClusterer(map, markers, {
+                    imagePath:
+                            "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+                });
+            }else
+                markerCluster.setMap(null);
             }
             function addMarker(latVal, lngVal, markerLabel, info) {
                 const infowindow = new google.maps.InfoWindow({
