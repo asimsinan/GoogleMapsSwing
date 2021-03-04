@@ -1,6 +1,6 @@
 # GoogleMapsSwing
 Displaying Google Maps on JFrame using JFXPanel
-This is Netbeans project. The project uses JavaFX libraries to display Google Maps on a JFrame. You can access javascript functions from Java and map them to Java functions.
+This is Netbeans project. The project uses JavaFX libraries to display Google Maps on a JFrame. You can access javascript functions from Java and map them to Java functions. All map related functions are inside GoogleMapsViewer class. It extends JFXPanel.
 # Steps to run: #
 1. Import the project from Netbeans.
 2. Put your API Key in maps.html where it says "YOUR_API_KEY".
