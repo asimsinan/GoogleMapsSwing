@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+        <style type="text/css">
+            html { height: 100% }
+            body { height: 100%; margin: 0; padding: 0 }
+            #map-canvas { height: 100% }
+        </style>
+        <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7Fx2uQ8mCWXVkJgBmlG58k7Cr0DUYMjg&callback=initMap" async defer></script>
+        <script type="text/javascript">
+            var map;
+            let markers = [];
+            const myLatLng = {lat: 37.815774584158255, lng: 30.532389036539932};
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map-canvas"), {
+                    zoom: 17,
+                    center: myLatLng
+                });
+
+            }
+
+            function setCenter(myLat, myLng, zoomLevel) {
+                map = new google.maps.Map(document.getElementById("map-canvas"), {
+                    zoom: zoomLevel,
+                    center: {lat: myLat, lng: myLng},
+                });
+
+            }
+            function setMapOnAll(map) {
+                for (let i = 0; i < markers.length; i++) {
+                    markers[i].setMap(map);
+                }
+            }
+            function deleteMarker(label) {
+                for (var i = 0; i < markers.length; i++) {
+                    if (markers[i].label == label) {
+                        markers[i].setMap(null);
+                        markers.splice(i, 1);
+                        return;
+                    }
+                }
+            }
+            function clearMarkers() {
+                setMapOnAll(null);
+            }
+            function deleteMarkers() {
+                clearMarkers();
+                markers = [];
+            }
+            function addMarker(latVal, lngVal, markerLabel, info) {
+                const infowindow = new google.maps.InfoWindow({
+                    content: info,
+                });
+                const marker = new google.maps.Marker({
+                    position: {lat: latVal, lng: lngVal},
+                    label: markerLabel,
+                    map: map
+                });
+                marker.addListener("click", () => {
+                    infowindow.open(map, marker);
+                });
+                markers.push(marker);
+            }
+        </script>
+
+    </head>
+    <body>
+        <div id="map-canvas"></div>
+    </body>
+</html>
