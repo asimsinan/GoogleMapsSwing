@@ -19,6 +19,6 @@ This is a Netbeans project. The project uses JavaFX libraries to display Google 
 8. Cluster markers.
 
 
-![screenshot.gif](https://github.com/asimsinan/GoogleMapsSwing/blob/master/screenshot.gif)
+![screenshot.gif](https://github.com/asimsinan/GoogleMapsSwing/blob/master/ss.gif)
 
 
