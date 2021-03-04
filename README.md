@@ -1,4 +1,4 @@
-# Displaying Google Maps on JFrame using JFXPanel
+# Embedding Google Maps in a JFrame using JFXPanel
 
 I was looking for a solution to add Google Maps to a Swing-based project. I came across a paid solution (JxBrowser). I didn't want to pay for it to accomplish the tasks that I needed. So, I created my own solution for free.
 This is a Netbeans project. The project uses JavaFX libraries to display Google Maps on a JFrame. You can access javascript functions from Java and map them to Java functions. All map related functions are inside GoogleMapsViewer class. It extends JFXPanel.
