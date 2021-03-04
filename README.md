@@ -16,6 +16,7 @@ This is a Netbeans project. The project uses JavaFX libraries to display Google 
 5. Delete all markers.
 6. Delete specific marker.
 7. Center map and adjust zoom level.
+8. Cluster markers.
 
 
 ![screenshot.gif](https://github.com/asimsinan/GoogleMapsSwing/blob/master/screenshot.gif)
